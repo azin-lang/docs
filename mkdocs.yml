@@ -1,66 +1,104 @@
 site_name: Azin
-site_url: https://docs.azin-lang.org
+site_description: A modern systems programming language.
+site_url: https://docs.azin-lang.dev
+repo_url: https://github.com/azin-lang/azin
+repo_name: azin-lang/azin
+edit_uri: edit/main/docs/
 
 theme:
   name: material
-  logo: assets/favicon.png
-  favicon: assets/favicon.png
-
+  custom_dir: docs/overrides
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  font:
+    text: Plus Jakarta Sans
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
   palette:
-    - scheme: slate
-      primary: blue
-      accent: blue
+    - media: "(prefers-color-scheme: dark)"
+      scheme: azin
       toggle:
-        icon: material/weather-sunny
+        icon: custom/sun
         name: Switch to light mode
-        
-    - scheme: default
-      primary: blue
-      accent: blue
+    - media: "(prefers-color-scheme: light)"
+      scheme: azin-light
       toggle:
-        icon: material/weather-night
+        icon: custom/moon
         name: Switch to dark mode
-        
   features:
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
+    - navigation.indexes
     - navigation.top
+    - navigation.tracking
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
-    - search.highlight
-    - search.suggest
-    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/azin-lang/azin
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/dX2qmXaj43
+    - icon: fontawesome/solid/newspaper
+      link: https://azin-lang.org/blog
 
 markdown_extensions:
-  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-      use_pygments: true
-
+      extend_pygments_lang:
+        - name: azin
+          lang: rust
+        - name: az
+          lang: rust
   - pymdownx.inlinehilite
-  - pymdownx.superfences
   - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      toc_depth: '2-6'
 
-extra_css:
-  - stylesheet/extra.css
-
-extra:
-  generator: false
-
-nav:
 nav:
   - Home: index.md
-
-  - Std:
-      - Overview: std/index.md
-
+  - Get Started:
+      - Overview: get-started/overview.md
+      - Installation:
+          - Binary Install:
+              - Overview: get-started/installation/binary/overview.md
+          - Manual Build: get-started/installation/manual-build.md
   - Language:
-      - Overview: language/index.md
-
+      - Overview: language/overview.md
       - Syntax:
-          - Overview: language/syntax/index.md
+          - Overview: language/syntax/overview.md
           - Functions: language/syntax/functions.md
           - Variables: language/syntax/variables.md
+  - Standard Library:
+      - Overview: std/overview.md

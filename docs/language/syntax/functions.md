@@ -4,7 +4,7 @@ Functions are reusable blocks of code that may accept parameters and optionally 
 
 ---
 
-# Declaring Functions
+## Declaring Functions
 
 Functions are declared using the `fn` keyword.
 
@@ -26,7 +26,7 @@ The function body begins with `do` and ends with `end`.
 
 ---
 
-# Zero-Parameter Functions
+## Zero-Parameter Functions
 
 Functions that do not accept parameters omit the parameter list.
 
@@ -52,6 +52,7 @@ fn version: string do
 end
 ```
 
+
 ```azin
 fn version(): string do
     return "0.1.0";
@@ -62,7 +63,7 @@ The parameter-less form is available only for functions that accept no parameter
 
 ---
 
-# Parameters
+## Parameters
 
 Parameters are declared inside parentheses.
 
@@ -100,7 +101,7 @@ Parameters may shadow identifiers from outer scopes.
 
 ---
 
-# Return Types
+## Return Types
 
 A return type is specified after the parameter list using `:`.
 
@@ -120,7 +121,7 @@ end
 
 ---
 
-# Returning
+## Returning
 
 Use the `return` statement to exit a function.
 
@@ -154,7 +155,7 @@ end
 
 ---
 
-# Calling Functions
+## Calling Functions
 
 Functions that accept one or more parameters are always invoked using parentheses.
 
@@ -174,7 +175,7 @@ Both forms are equivalent.
 
 ---
 
-# Function References
+## Function References
 
 Functions are first-class values.
 
@@ -224,7 +225,7 @@ version();
 
 ---
 
-# Generic Functions
+## Generic Functions
 
 Generic functions declare one or more type parameters using square brackets.
 
@@ -236,7 +237,7 @@ end
 
 ---
 
-# Function Overloading
+## Function Overloading
 
 Multiple functions may share the same name provided that their parameter lists differ.
 
@@ -254,7 +255,7 @@ The compiler selects the appropriate overload based on the provided arguments.
 
 ---
 
-# Examples
+## Examples
 
 A simple function.
 
@@ -302,7 +303,7 @@ var callback: fn = version;
 
 ---
 
-# Design Goals
+## Design Goals
 
 The function system is designed around a small set of principles.
 

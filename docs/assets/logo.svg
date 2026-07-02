@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 32" fill="none">
+  <style>
+    .back-a {
+      fill: #000000;
+      opacity: 0.9;
+    }
+    .front-a {
+      fill: #29b6f6;
+    }
+    @media (prefers-color-scheme: dark) {
+      .back-a {
+        fill: #ffffff;
+        opacity: 0.95;
+      }
+    }
+  </style>
+  <g transform="translate(3.2, 0.5)">
+    <path class="back-a" d="M16 4L26 27H21.5L19.6 22H12.4L10.5 27H6L16 4ZM16 11.5L13.6 18H18.4L16 11.5Z" />
+  </g>
+  <path class="front-a" d="M16 4L26 27H21.5L19.6 22H12.4L10.5 27H6L16 4ZM16 11.5L13.6 18H18.4L16 11.5Z" />
+</svg>
