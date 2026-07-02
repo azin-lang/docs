@@ -1,6 +1,6 @@
 site_name: Azin
 site_description: A modern systems programming language.
-site_url: https://docs.azin-lang.dev
+site_url: https://docs.azin-lang.org
 repo_url: https://github.com/azin-lang/azin
 repo_name: azin-lang/azin
 edit_uri: edit/main/docs/
@@ -52,7 +52,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/azin-lang/azin
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/dX2qmXaj43
+      link: https://discord.gg/HVhCevjAxR
     - icon: fontawesome/solid/newspaper
       link: https://azin-lang.org/blog
 
