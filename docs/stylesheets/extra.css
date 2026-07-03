@@ -1572,3 +1572,75 @@ code {
         opacity: 1;
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .azin-hero-glow {
+        animation: none !important;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none !important;
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    .md-header {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background-color: var(--azin-bg);
+    }
+}
+
+@media (prefers-contrast: more) {
+    :root {
+        --azin-border: rgba(255, 255, 255, 0.25);
+        --azin-border-strong: rgba(255, 255, 255, 0.4);
+    }
+
+    [data-md-color-scheme="azin-light"] {
+        --azin-border: rgba(0, 0, 0, 0.3);
+        --azin-border-strong: rgba(0, 0, 0, 0.45);
+    }
+
+    .md-button,
+    .azin-card,
+    .azin-feature-card,
+    .md-typeset .highlight {
+        border-width: 2px;
+    }
+}
+
+@media (forced-colors: active) {
+    * {
+        forced-color-adjust: auto;
+    }
+
+    .azin-card,
+    .azin-feature-card,
+    .md-button,
+    .md-typeset .highlight {
+        border: 1px solid CanvasText;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--azin-blue);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
