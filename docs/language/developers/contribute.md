@@ -42,7 +42,7 @@ If you're unsure how something should be written, look at nearby code and stay c
 
 Planning a new language feature? A major refactor? An architectural change?
 
-Please discuss it with us first preferably on Discord or in a GitHub Discussion, before investing significant time implementing it.
+Please discuss it with us first, preferably on Discord or in a GitHub Discussion, before investing significant time implementing it.
 
 This helps avoid duplicate work and ensures everyone's heading in the same direction.
 
