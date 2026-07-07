@@ -100,5 +100,8 @@ nav:
           - Overview: language/syntax/overview.md
           - Functions: language/syntax/functions.md
           - Variables: language/syntax/variables.md
+      - Developers:
+          - Contribute: language/developers/contribute.md
+          - Priorities: language/developers/priorities.md    
   - Standard Library:
       - Overview: std/overview.md
