@@ -18,7 +18,7 @@ Most design discussions, language proposals, and development planning happen the
 
 Before contributing, take a moment to read the documentation. It may already answer your questions or explain why something is implemented the way it is.
 
-For implementation details, APIs, and the compiler's internal architecture, visit our [Doxygen documentation](https://internals.azin-lang.org)
+For implementation details, APIs, and the compiler's internal architecture, visit our [doc2go documentation](https://internals.azin-lang.org)
 
 ---
 
@@ -76,6 +76,6 @@ We're excited to see what you build. 🚀
 
 - [**Website**](https://azin-lang.org)
 - [**Documentation**](https://docs.azin-lang.org)
-- [**Internal Documentation (Doxygen)**](https://internals.azin-lang.org)
+- [**Internal Documentation (doc2go)**](https://internals.azin-lang.org)
 - [**Discord**](https://azin-lang.org/discord)
 - [**GitHub**](https://azin-lang.org/github)
