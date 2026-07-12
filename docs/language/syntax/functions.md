@@ -48,14 +48,13 @@ The following declarations are equivalent.
 
 ```azin
 fn version: string do
-    return "0.1.0";
+    return "0.1.0"
 end
 ```
 
-
 ```azin
 fn version(): string do
-    return "0.1.0";
+    return "0.1.0"
 end
 ```
 
@@ -69,7 +68,7 @@ Parameters are declared inside parentheses.
 
 ```azin
 fn greet(name: string) do
-    print(name);
+    print(name)
 end
 ```
 
@@ -115,7 +114,7 @@ If no return type is specified, the function does not return a value.
 
 ```azin
 fn log(message: string) do
-    print(message);
+    print(message)
 end
 ```
 
@@ -129,7 +128,7 @@ Functions with a return type must return a value compatible with the declared ty
 
 ```azin
 fn square(x: int): int do
-    return x * x;
+    return x * x
 end
 ```
 
@@ -137,8 +136,8 @@ Functions without a return type may use `return;` to exit early.
 
 ```azin
 fn validate(value: int) do
-    if value < 0 do
-        return;
+    if value < 0 then
+        return
     end
 
     print("Valid");
@@ -277,7 +276,7 @@ A function that returns a value.
 
 ```azin
 fn max(a: int, b: int): int do
-    if a > b do
+    if a > b then
         return a;
     end
 
