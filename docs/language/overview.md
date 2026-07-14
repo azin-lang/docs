@@ -5,4 +5,4 @@ Azin is still in active development, so its philosophy and long-term goals are s
 For now, the language's design will gradually take shape as new features are introduced and documented. You can explore the currently proposed syntax in the syntax section.
 
 !!! warning "Work in progress"
-    This section is still being written. Check back soon, or follow progress on the [blog](https://azin-lang.dev/blog).
+    This section is still being written. Check back soon, or follow progress on the [blog](https://azin-lang.org/blog).
