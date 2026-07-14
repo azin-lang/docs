@@ -39,8 +39,10 @@ end
 Functions without parameters and without a return value are written as follows.
 
 ```azin
+importc "stdio"
+
 fn initialize do
-    print("Initializing...");
+    printf("Initializing...");
 end
 ```
 
@@ -67,8 +69,10 @@ The parameter-less form is available only for functions that accept no parameter
 Parameters are declared inside parentheses.
 
 ```azin
+import "stdio"
+
 fn greet(name: string) do
-    print(name)
+    printf(name)
 end
 ```
 
@@ -113,8 +117,10 @@ end
 If no return type is specified, the function does not return a value.
 
 ```azin
+importc "stdio"
+
 fn log(message: string) do
-    print(message)
+    printf(message)
 end
 ```
 
@@ -135,12 +141,14 @@ end
 Functions without a return type may use `return;` to exit early.
 
 ```azin
+importc "stdio"
+
 fn validate(value: int) do
     if value < 0 then
         return
     end
 
-    print("Valid");
+    printf("Valid");
 end
 ```
 
@@ -159,22 +167,22 @@ end
 Functions that accept one or more parameters are always invoked using parentheses.
 
 ```azin
+importc "stdio"
 add(10, 20);
-print("Hello");
+printf("Hello");
 ```
 
-Zero-parameter functions may be invoked either with or without parentheses.
+Zero-parameter functions may be invoked either with or without parentheses. (proposed, for now it's only with parens)
 
 ```azin
 version;
-version();
 ```
 
 Both forms are equivalent.
 
 ---
 
-## Function References
+## Function References (proposed)
 
 Functions are first-class values.
 
@@ -205,26 +213,17 @@ No additional syntax is required to obtain a function reference.
 In every other context, referencing a zero-parameter function automatically invokes it.
 
 ```azin
-var text = version;
-
-print(version);
-
-version;
-```
-
-The examples above are equivalent to:
-
-```azin
+importc "stdio"
 var text = version();
 
-print(version());
+printf(version);
 
 version();
 ```
 
 ---
 
-## Generic Functions
+## Generic Functions (proposed)
 
 Generic functions declare one or more type parameters using square brackets.
 
@@ -236,7 +235,7 @@ end
 
 ---
 
-## Function Overloading
+## Function Overloading (proposed)
 
 Multiple functions may share the same name provided that their parameter lists differ.
 
@@ -259,8 +258,10 @@ The compiler selects the appropriate overload based on the provided arguments.
 A simple function.
 
 ```azin
+importc "stdio"
+
 fn hello do
-    print("Hello, World!");
+    printf("Hello, World!");
 end
 ```
 

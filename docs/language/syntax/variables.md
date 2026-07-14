@@ -16,14 +16,23 @@ var name = "Azin"
 var enabled = true
 ```
 
+Variables are **immutable by default**. To allow reassignment, use the `mut` modifier.
+
+```azin
+var mut counter = 0
+
+counter = counter + 1
+```
+
 A variable declaration consists of:
 
-* the `var` keyword,
-* the variable name,
-* an optional type annotation,
-* an initializer.
+- the `var` keyword,
+- an optional `mut` modifier,
+- the variable name,
+- an optional type annotation,
+- an initializer.
 
-Every variable declaration must provide either an explicit type or an initializer.
+Every variable declaration must provide an initializer.
 
 ---
 
@@ -50,7 +59,7 @@ letter  -> char
 value   -> float
 ```
 
-Type inference is performed at compile time.
+Type inference is performed entirely at compile time.
 
 ---
 
@@ -70,43 +79,47 @@ Explicit type annotations are optional whenever the type can be inferred.
 
 ---
 
-## Initialization
+## Mutability
 
-Variables are initialized when they are declared.
-
-```azin
-var x = 12
-
-var y: int = 42
-```
-
-A declaration without both a type and an initializer is invalid.
+Variables declared with `var` cannot be modified after initialization.
 
 ```azin
-var value
+var value = 10
+
+value = 20 // Error
 ```
 
-The compiler cannot infer a type when no initializer is provided.
+To allow reassignment, declare the variable with `var mut`.
+
+```azin
+var mut value = 10
+
+value = 20
+```
+
+Mutability is explicit to make accidental modification less likely.
 
 ---
 
 ## Assignment
 
-Variables may be reassigned after they are declared.
+Only mutable variables may be assigned new values.
 
 ```azin
-var x = 5
+var mut x = 5
 
 x = 10
 ```
 
-Assignments must be compatible with the variable's declared or inferred type.
+Assignments must be compatible with the variable's type.
 
 ```azin
-var value: float = 10
+var mut value: float = 10.0
+
+value = 15.5
 ```
 
-In Azin 0.1.x, implicit conversions follow the behavior of the generated C code.
+Assigning a value of an incompatible type results in a compile-time error.
 
 ---
 
@@ -115,11 +128,16 @@ In Azin 0.1.x, implicit conversions follow the behavior of the generated C code.
 Variables are visible only within the scope in which they are declared.
 
 ```azin
-fn main do
-    if true do
+importc "stdio"
+
+fn main: int do
+    if true then
         var message = "Hello"
-        print(message)
+
+        printf("%s\n", message)
     end
+
+    return 0
 end
 ```
 
@@ -128,12 +146,16 @@ Variables declared inside a block are not accessible outside that block.
 Inner scopes may shadow variables declared in outer scopes.
 
 ```azin
+importc "stdio"
+
 var value = 10
 
-fn main do
+fn main: int do
     var value = 20
 
-    print(value)
+    printf("%d\n", value)
+
+    return 0
 end
 ```
 
@@ -144,10 +166,14 @@ end
 Variables may be declared outside of functions.
 
 ```azin
-var version = "0.1.0"
+importc "stdio"
 
-fn main do
-    print(version)
+var version = "0.2.0"
+
+fn main: int do
+    printf("%s\n", version)
+
+    return 0
 end
 ```
 
@@ -155,25 +181,20 @@ Global variables are accessible throughout the program.
 
 ---
 
-## Upcoming Changes (0.2.0)
-
-The following improvements are planned for Azin 0.2.0.
-
-* Variables will be immutable by default.
-* Mutable variables will be declared using `var mut`.
-* Variables may be declared without an initializer provided an explicit type is specified.
-* Compound assignment operators (`+=`, `-=`, `*=`, `/=`) will be supported.
-* Increment and decrement operators (`++` and `--`) will be supported.
-* Type checking will become stricter and will no longer rely on implicit C conversions.
-
----
-
 ## Examples
 
-A variable with inferred type.
+A variable with an inferred type.
 
 ```azin
 var age = 13
+```
+
+A mutable variable.
+
+```azin
+var mut count = 0
+
+count = count + 1
 ```
 
 A variable with an explicit type.
@@ -185,30 +206,13 @@ var name: string = "Azin"
 A global variable.
 
 ```azin
-var version = "0.1.0"
+importc "stdio"
 
-fn main do
-    print(version)
+var version = "0.2.0"
+
+fn main: int do
+    printf("%s\n", version)
+
+    return 0
 end
 ```
-
-Reassigning a variable.
-
-```azin
-var count = 0
-
-count = 1
-```
-
----
-
-## Design Goals
-
-The variable system is designed around a small set of principles.
-
-* Simple and readable declarations.
-* Type inference whenever possible.
-* Explicit types when desired.
-* Minimal syntax.
-* Predictable scoping rules.
-* Stronger type safety planned for future releases.
