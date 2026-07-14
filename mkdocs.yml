@@ -98,8 +98,10 @@ nav:
       - Overview: language/overview.md
       - Syntax:
           - Overview: language/syntax/overview.md
+          - Types: language/syntax/types.md
           - Functions: language/syntax/functions.md
           - Variables: language/syntax/variables.md
+          - Loops: language/syntax/loop.md
       - Developers:
           - Contribute: language/developers/contribute.md
           - Priorities: language/developers/priorities.md    
